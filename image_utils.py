@@ -1,6 +1,6 @@
 from PIL import Image
 import numpy as np
-from scipy.signal import convolve2d
+from scipy.ndimage import convolve as convolve2D
 
 def load_image(path):
     
@@ -8,9 +8,6 @@ def load_image(path):
     image_array = np.array(image)    
     return image_array
 
-
-import numpy as np
-from scipy.ndimage import convolve as convolve2D
 def edge_detection(image_array):
    
     gray = image_array.astype(np.float32).mean(axis=2)
